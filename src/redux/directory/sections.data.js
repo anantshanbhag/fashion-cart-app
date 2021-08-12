@@ -29,7 +29,7 @@ const SECTIONS_DATA = [
         // imageUrl: 'images/womens.png', // local file in public/images/
         size: 'large',
         id: 4,
-        linkUrl: 'shop/womens'
+        linkUrl: 'shop/women'
     },
     {
         title: 'men',
@@ -37,7 +37,7 @@ const SECTIONS_DATA = [
         // imageUrl: 'images/men.png', // local file in public/images/
         size: 'large',
         id: 5,
-        linkUrl: 'shop/mens'
+        linkUrl: 'shop/men'
     }
 ];
 
