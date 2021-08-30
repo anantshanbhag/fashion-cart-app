@@ -38,6 +38,56 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 }
 
+/**
+ * Store collections of static data array to firestore database.
+ *
+ * @param collectionKey Key of the collection.
+ * @param objectArray Static data array to be added to firestore database.
+ * @return A Promise resolved of commited batch of storing data to database  
+ */
+export const addCollectionAndDocuments = async (collectionKey, objectArray) => {
+
+  const collectionRef = firestore.collection(collectionKey);
+
+  const batch = firestore.batch();
+
+  objectArray.forEach(obj => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+
+  return await batch.commit();
+};
+
+/**
+ * Convert collections of firestore database objects (Snapshot) to Hash Map.
+ *
+ * @param collections collections of firestore database objects (Snapshot).
+ * @return Hash Map object of collections.  
+ */
+export const convertCollectionsSnapshotToMap = (collections) => {
+
+  const collectionArray = collections.docs.map(doc => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    }
+  });
+
+  // used reduce to create hash table object from array ==> with key = collection.title
+  const collectionHashMap =
+    collectionArray.reduce((accumulator, collection) => {
+      accumulator[collection.title.toLowerCase()] = collection;
+      return accumulator;
+    }, {});
+
+  return collectionHashMap;
+}
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
