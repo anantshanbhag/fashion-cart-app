@@ -27,9 +27,7 @@ class ShopPage extends React.Component {
     const collectionRef = firestore.collection('collections');
 
     // const url = 'https://firestore.googleapis.com/v1/projects/crwn-db-f81e3/databases/(default)/documents/collections';
-    // fetch(url)
-    //   .then(response => response.json())
-    //   .then(collections => console.log(collections));
+    // fetch(url).then(res => res.json()).then(data => console.log(data));
 
     collectionRef.get().then(snapshot => {
 
@@ -37,7 +35,7 @@ class ShopPage extends React.Component {
       updateCollections(collectionsMap);
       this.setState({ loading: false });
     });
-    
+
   }
 
   render() {
