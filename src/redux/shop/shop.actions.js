@@ -3,19 +3,19 @@ import ShopActionTypes from "./shop.types";
 import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
 
 /** 
- * Action to determine fetch collection has started.
+ * `action` to determine fetch collection has started.
+ * @returns `action`
  * @createdOn 5-Sep-2021
- * @return `action` { type : FETCH_COLLECTIONS_START }
  */
 export const fetchCollectionsStart = () => ({
   type: ShopActionTypes.FETCH_COLLECTIONS_START
 });
 
 /** 
- * Action to determine fetch collection is success and get list of collections.
+ * `action` to determine fetch collection is success and get list of collections.
+ * @param {object} collectionsMap list of collections
+ * @returns `action` { ..., payload: `collectionsMap` }
  * @createdOn 5-Sep-2021
- * @param collectionsMap list of collections
- * @return action { type : FETCH_COLLECTIONS_SUCCESS, payload: `collectionsMap` }
  */
 export const fetchCollectionsSuccess = collectionsMap => ({
   type: ShopActionTypes.FETCH_COLLECTIONS_SUCCESS,
@@ -23,10 +23,10 @@ export const fetchCollectionsSuccess = collectionsMap => ({
 });
 
 /** 
- * Action to determine fetch collection is failure and get error message.
+ * `action` to determine fetch collection is failure and get error message.
+ * @param {string} errorMessage fetch failure error message
+ * @returns `action` { ..., payload: `errorMessage` }
  * @createdOn 5-Sep-2021
- * @param errorMessage fetch failure error message
- * @return action { type : FETCH_COLLECTIONS_FAILURE, payload: `errorMessage` }
  */
 export const fetchCollectionsFailure = errorMessage => ({
   type: ShopActionTypes.FETCH_COLLECTIONS_FAILURE,
@@ -34,10 +34,10 @@ export const fetchCollectionsFailure = errorMessage => ({
 });
 
 /** 
- * Action to return a function to fetch collection from firestore.
+ * `action` to return a function to fetch collection from firestore.
  * @note redux-thunk middleware calls return function with dispatch method as argument
+ * @returns `function(dispatch)` => fetch collection and dispatch success or failure payloads 
  * @createdOn 5-Sep-2021
- * @return `function(dispatch)` => fetch collection and dispatch success or failure payloads 
  */
 export const fetchCollectionsStartAsync = () => {
 

@@ -5,8 +5,8 @@ const selectShop = state => state.shop;
 
 /** 
  * Selector to get hash map `state.shop.collections`.
- * @createdOn 11-Aug-2021
  * @return `state.shop.collections` - hash map of collections.
+ * @createdOn 11-Aug-2021
  */
 export const selectShopCollections = createSelector(
   [selectShop],
@@ -15,8 +15,8 @@ export const selectShopCollections = createSelector(
 
 /** 
  * Selector to get array of collections from hash map `state.shop.collections`.
- * @createdOn 11-Aug-2021
  * @return array of collections.
+ * @createdOn 11-Aug-2021
  */
 export const selectCollectionsForPreview = createSelector(
   [selectShopCollections],
@@ -25,10 +25,10 @@ export const selectCollectionsForPreview = createSelector(
 
 /** 
  * Selector to get particular collection from `state.shop.collections` passing `collectionUrlParam` as hash key.
- * @createdOn 12-Aug-2021
  * @param collectionUrlParam key passed in URL path
  * @note selector is memoized using lodash.memoize 
  * @return collection having key `collectionUrlParam`, else null.
+ * @createdOn 12-Aug-2021
  */
 export const selectShopCollection = memoize((collectionUrlParam) =>
   createSelector(
@@ -39,8 +39,8 @@ export const selectShopCollection = memoize((collectionUrlParam) =>
 
 /** 
  * Selector to get true if `state.shop.isFetching`.
- * @createdOn 5-Sep-2021
  * @return `state.shop.isFetching`.
+ * @createdOn 5-Sep-2021
  */
 export const selectIsCollectionFetching = createSelector(
   [selectShop],
@@ -49,8 +49,8 @@ export const selectIsCollectionFetching = createSelector(
 
 /** 
  * Selector to determine if `state.shop.collections` has data.
- * @createdOn 6-Sep-2021
  * @return true if `state.shop.collections` has data.
+ * @createdOn 6-Sep-2021
  */
 export const selectIsCollectionsLoaded = createSelector(
   [selectShop],

@@ -11,6 +11,13 @@ const config = {
   appId: "1:315359850925:web:3e942f28c2902ca7163124"
 };
 
+/**
+ * Creates user profile document from `userAuth`
+ * @param {object} userAuth user authentication data after sign in with Google or with Email.
+ * @param {object} additionalData additional data of user.
+ * @returns `userRef` user profile document from firestore based on user id `uid` from `userAuth`.
+ * @createdOn 6-Aug-2021
+ */
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
@@ -40,10 +47,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 /**
  * Store collections of static data array to firestore database.
- *
- * @param collectionKey Key of the collection.
- * @param objectArray Static data array to be added to firestore database.
- * @return A Promise resolved of commited batch of storing data to database  
+ * @param {string} collectionKey Key of the collection.
+ * @param {[object]} objectArray Static data array to be added to firestore database.
+ * @returns A Promise resolved of committed batch of storing data to database  
+ * @createdOn 30-Aug-2021
  */
 export const addCollectionAndDocuments = async (collectionKey, objectArray) => {
 
@@ -61,9 +68,9 @@ export const addCollectionAndDocuments = async (collectionKey, objectArray) => {
 
 /**
  * Convert collections of firestore database objects (Snapshot) to Hash Map.
- *
- * @param collections collections of firestore database objects (Snapshot).
- * @return Hash Map object of collections.  
+ * @param {[object]} collections collections of firestore database objects (Snapshot).
+ * @returns Hash Map object of collections.  
+ * @createdOn 30-Aug-2021
  */
 export const convertCollectionsSnapshotToMap = (collections) => {
 
@@ -88,13 +95,31 @@ export const convertCollectionsSnapshotToMap = (collections) => {
   return collectionHashMap;
 }
 
+/**
+ * Unsubscribes the current user and gets that user.
+ * @returns promise which unsubscribes user and resolves `userAuth`
+ * @note `yield` should used to get the resolved value from promise. 
+ * @createdOn 9-Sep-2021
+ */
+export const getCurrentUser = () => {
+
+  return new Promise((resolve, reject) => {
+
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+
+  });
+}
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
+// export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;
