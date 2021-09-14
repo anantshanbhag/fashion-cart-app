@@ -15,6 +15,10 @@ import Header from './components/header/header.component';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
+/** 
+ * @createdOn 4-Aug-2021 
+ * @modifiedOn 14-Sep-2021 
+ */
 class App extends React.Component {
 
   unsubscribeFromAuth = null;
@@ -50,10 +54,12 @@ class App extends React.Component {
   }
 }
 
+/** @createdOn 11-Aug-2021 */
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
+/** @createdOn 14-Sep-2021 */
 const mapDispatchToProps = dispatch => ({
   checkUserSession: () => dispatch(checkUserSession())
 });

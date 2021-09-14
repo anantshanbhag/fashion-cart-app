@@ -8,6 +8,10 @@ import MenuItem from '../menu-item/menu-item.component';
 
 import { DirectoryMenuContainer } from './directory.styles';
 
+/** 
+ * @createdOn 12-Aug-2021 
+ * @modifiedOn 20-Aug-2021 
+ */
 const Directory = ({ sections }) =>
 	<DirectoryMenuContainer>
 		{

@@ -1,5 +1,7 @@
-/* Used as starting data for Directory */
-
+/**
+ * Used as initial data for Directory.
+ * @createdOn 2-Aug-2021
+ */
 const SECTIONS_DATA = [
     {
         title: 'hats',

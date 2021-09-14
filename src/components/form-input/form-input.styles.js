@@ -9,6 +9,7 @@ const shrinkLabelStyles = css`
   color: ${mainColor};
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const GroupContainer = styled.div`
   position: relative;
   margin: 45px 0;
@@ -18,6 +19,7 @@ export const GroupContainer = styled.div`
   }
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const FormInputContainer = styled.input`
   background: none;
   background-color: white;
@@ -40,6 +42,7 @@ export const FormInputContainer = styled.input`
   }
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const FormInputLabel = styled.label`
   color: ${subColor};
   font-size: 16px;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+/** @createdOn 20-Aug-2021 */
 export const CheckoutPageContainer = styled.div`
   width: 55%;
   min-height: 90vh;
@@ -14,6 +15,7 @@ export const CheckoutPageContainer = styled.div`
   }
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const CheckoutHeaderContainer = styled.div`
   width: 100%;
   height: 40px;
@@ -22,6 +24,7 @@ export const CheckoutHeaderContainer = styled.div`
   border-bottom: 1px solid darkgrey;
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const HeaderBlockContainer = styled.div`
   text-transform: capitalize;
   width: 23%;
@@ -31,12 +34,14 @@ export const HeaderBlockContainer = styled.div`
   }
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const TotalContainer = styled.div`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const WarningContainer = styled.div`
   text-align: center;
   margin-top: 40px;

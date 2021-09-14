@@ -12,6 +12,10 @@ import {
 	ButtonsBarContainer
 } from './sign-in.styles';
 
+/** 
+ * @createdOn 4-Aug-2021 
+ * @modifiedOn 14-Sep-2021 
+ */
 class SignIn extends React.Component {
 	constructor(props) {
 		super(props);

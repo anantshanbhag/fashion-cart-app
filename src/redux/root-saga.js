@@ -8,6 +8,7 @@ import { cartSagas } from './cart/cart.sagas';
  * A seperate root saga to be run by `sagaMiddleware` in Store 
  * 1. `all([])` takes an array of sagas
  * @createdOn 7-Sep-2021
+ * @modifiedOn 14-Sep-2021
  */
 export default function* rootSaga() {
   yield all([

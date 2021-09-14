@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   sections: SECTIONS_DATA
 }
 
+/** @createdOn 5-Sep-2021 */
 const directoryReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     default:

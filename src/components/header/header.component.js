@@ -13,6 +13,10 @@ import { ReactComponent as Logo } from "../../assets/crown.svg"
 
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles';
 
+/** 
+ * @createdOn 2-Aug-2021 
+ * @modifiedOn 14-Sep-2021 
+ */
 const Header = ({ currentUser, hidden, signOutStart }) => (
 	<HeaderContainer>
 		<LogoContainer to="/">

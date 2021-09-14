@@ -8,6 +8,10 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
+/** 
+ * @createdOn 6-Aug-2021 
+ * @modifiedOn 14-Sep-2021 
+ */
 class SignUp extends React.Component {
 
 	state = { displayName: '', email: '', password: '', confirmPassword: '' };

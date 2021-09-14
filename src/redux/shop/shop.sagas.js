@@ -50,7 +50,7 @@ export function* fetchCollectionsStart() {
  * 1. `all()` calls all user sagas one by one.
  * @createdOn 14-Sep-2021
  */
- export function* shopSagas() {
+export function* shopSagas() {
   yield all([
     call(fetchCollectionsStart)
   ]);

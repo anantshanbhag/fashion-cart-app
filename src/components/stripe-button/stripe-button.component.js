@@ -1,6 +1,7 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
+/** @createdOn 13-Aug-2021 */
 const StripeCheckoutButton = ({ price }) => {
 
 	const priceForStripe = price * 100;

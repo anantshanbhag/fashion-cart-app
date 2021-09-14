@@ -13,6 +13,10 @@ const persistConfig = {
   whitelist: ['cart']
 };
 
+/** 
+ * @createdOn 10-Aug-2021 
+ * @modifiedOn 12-Aug-2021 
+ */
 const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,

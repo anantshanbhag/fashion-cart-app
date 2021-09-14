@@ -6,6 +6,10 @@ const INITIAL_STATE = {
   errorMessage: undefined
 }
 
+/** 
+ * @createdOn 12-Aug-2021 
+ * @modifiedOn 6-Sep-2021 
+ */
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
 

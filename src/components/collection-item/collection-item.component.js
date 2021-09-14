@@ -12,6 +12,10 @@ import {
   PriceContainer
 } from './collection-styles.styles';
 
+/** 
+ * @createdOn 11-Aug-2021 
+ * @modifiedOn 20-Aug-2021 
+ */
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
 

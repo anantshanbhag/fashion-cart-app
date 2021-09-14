@@ -6,11 +6,15 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 import { selectShopCollection } from '../../redux/shop/shop.selectors';
 
 import {
-  CollectionPageContainer,
-  CollectionTitle,
-  CollectionItemsContainer
+	CollectionPageContainer,
+	CollectionTitle,
+	CollectionItemsContainer
 } from './collection.styles';
 
+/** 
+ * @createdOn 11-Aug-2021 
+ * @modifiedOn 20-Aug-2021 
+ */
 const CollectionPage = ({ collection }) => {
 
 	const { title, items } = collection;

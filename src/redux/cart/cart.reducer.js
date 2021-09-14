@@ -11,9 +11,13 @@ const INITIAL_STATE = {
   cartItems: []
 }
 
+/** 
+ * @createdOn 10-Aug-2021 
+ * @modifiedOn 14-Sep-2021 
+ */
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    
+
     case CartActionTypes.TOGGLE_CART_HIDDEN:
       return {
         ...state,

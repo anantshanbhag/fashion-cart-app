@@ -40,6 +40,7 @@ const getButtonStyles = ({ isGoogleSignIn, isInverted }) => {
     : isInverted ? invertedButtonStyles : buttonStyles;
 }
 
+/** @createdOn 20-Aug-2021 */
 export const CustomButtonContainer = styled.button`
   min-width: 165px;
   width: auto;

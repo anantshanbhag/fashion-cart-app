@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+/** @createdOn 20-Aug-2021 */
 export const MenuItemContainer = styled.div`
 	height: ${({ size }) => (size ? '380px' : '240px')};
 	min-width: 30%;
@@ -34,6 +35,7 @@ export const MenuItemContainer = styled.div`
   }
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const BackgroundImageContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -42,6 +44,7 @@ export const BackgroundImageContainer = styled.div`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const ContentContainer = styled.div`
   height: 90px;
   padding: 0 25px;
@@ -55,6 +58,7 @@ export const ContentContainer = styled.div`
   position: absolute;
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const ContentTitle = styled.span`
   font-weight: bold;
   margin-bottom: 6px;
@@ -62,6 +66,7 @@ export const ContentTitle = styled.span`
   color: #4a4a4a;
 `;
 
+/** @createdOn 20-Aug-2021 */
 export const ContentSubtitle = styled.span`
   font-weight: lighter;
   font-size: 16px;

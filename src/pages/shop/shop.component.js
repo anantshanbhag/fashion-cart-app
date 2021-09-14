@@ -7,6 +7,10 @@ import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
 import CollectionPageContainer from '../collection/collection.container';
 
+/** 
+ * @createdOn 2-Aug-2021 
+ * @modifiedOn 14-Sep-2021 
+ */
 class ShopPage extends React.Component {
 
   componentDidMount() {
@@ -35,8 +39,8 @@ class ShopPage extends React.Component {
   }
 }
 
+/** @createdOn 14-Sep-2021 */
 const mapDispatchToProps = dispatch => ({
-
   fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 });
 

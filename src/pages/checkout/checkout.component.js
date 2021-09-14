@@ -8,13 +8,17 @@ import CheckoutItem from '../../components/checkout-item/checkout-item.component
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
 import {
-  CheckoutPageContainer,
-  CheckoutHeaderContainer,
-  HeaderBlockContainer,
-  TotalContainer,
-  WarningContainer
+	CheckoutPageContainer,
+	CheckoutHeaderContainer,
+	HeaderBlockContainer,
+	TotalContainer,
+	WarningContainer
 } from './checkout.styles';
 
+/** 
+ * @createdOn 11-Aug-2021 
+ * @modifiedOn 20-Aug-2021 
+ */
 const CheckoutPage = ({ cartItems, cartPriceTotal }) => (
 	<CheckoutPageContainer>
 		<CheckoutHeaderContainer>

@@ -5,6 +5,10 @@ import SignUp from '../../components/sign-up/sign-up.component';
 
 import { SignInAndSignUpContainer } from './sign-in-and-sign-up.styles';
 
+/** 
+ * @createdOn 4-Aug-2021 
+ * @modifiedOn 20-Aug-2021 
+ */
 const SignInAndSignUpPage = () => (
 	<SignInAndSignUpContainer>
 		<SignIn />

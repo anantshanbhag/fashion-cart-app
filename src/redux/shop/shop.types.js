@@ -1,3 +1,7 @@
+/** 
+ * @createdOn 30-Aug-2021 
+ * @modifiedOn 6-Sep-2021 
+ */
 const ShopActionTypes = {
   FETCH_COLLECTIONS_START: 'FETCH_COLLECTIONS_START',
   FETCH_COLLECTIONS_SUCCESS: 'FETCH_COLLECTIONS_SUCCESS',

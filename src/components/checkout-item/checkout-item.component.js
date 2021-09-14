@@ -4,13 +4,17 @@ import { connect } from 'react-redux';
 import { addItem, clearItem, decreaseItem } from '../../redux/cart/cart.actions';
 
 import {
-  CheckoutItemContainer,
-  ImageContainer,
-  TextContainer,
-  QuantityContainer,
-  RemoveButtonContainer
+	CheckoutItemContainer,
+	ImageContainer,
+	TextContainer,
+	QuantityContainer,
+	RemoveButtonContainer
 } from './checkout-item.styles';
 
+/** 
+ * @createdOn 11-Aug-2021 
+ * @modifiedOn 20-Aug-2021 
+ */
 const CheckoutItem = ({ cartItem, dispatch }) => {
 
 	const { id, name, imageUrl, price, quantity } = cartItem;
