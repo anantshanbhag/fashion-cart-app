@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
@@ -9,14 +9,13 @@ import CollectionPageContainer from '../collection/collection.container';
 
 /** 
  * @createdOn 2-Aug-2021 
- * @modifiedOn 15-Sep-2021 (saga, hooks)
+ * @modifiedOn 16-Sep-2021 (saga, redux hooks)
  */
-const ShopPage = ({ fetchCollectionsStart, match }) => {
+const ShopPage = ({ match }) => {
 
-  useEffect(() => {
-    fetchCollectionsStart();  //function body mimics componentDidMount
-    return () => { /* return function mimics componentWillUnmount */ };
-  }, [fetchCollectionsStart]);
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(fetchCollectionsStart()), [dispatch]);
 
   return (
     <div className="shop-page">
@@ -33,9 +32,4 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
   );
 }
 
-/** @createdOn 14-Sep-2021 */
-const mapDispatchToProps = dispatch => ({
-  fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
-});
-
-export default connect(null, mapDispatchToProps)(ShopPage);
+export default ShopPage;

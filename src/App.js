@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './App.css';
 
@@ -17,11 +16,14 @@ import { checkUserSession } from './redux/user/user.actions';
 
 /** 
  * @createdOn 4-Aug-2021 
- * @modifiedOn 15-Sep-2021 (saga, hooks)
+ * @modifiedOn 16-Sep-2021 (saga, hooks)
  */
-const App = ({ checkUserSession, currentUser }) => {
+const App = () => {
 
-  useEffect(() => checkUserSession(), [checkUserSession]);  //mimics componentDidMount
+  const currentUser = useSelector(selectCurrentUser); //mimics mapStateToProps = createStructuredSelector( {currentUser: selectCurrentUser} );  //working: useSelector re runs whenever the state changes where the selector points to.
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(checkUserSession()), [dispatch]);  //mimics mapDispatchToProps = dispatch => ({checkUserSession: () => dispatch(checkUserSession()});
 
   return (
     <div>
@@ -39,14 +41,4 @@ const App = ({ checkUserSession, currentUser }) => {
   );
 }
 
-/** @createdOn 11-Aug-2021 */
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
-});
-
-/** @createdOn 14-Sep-2021 */
-const mapDispatchToProps = dispatch => ({
-  checkUserSession: () => dispatch(checkUserSession())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

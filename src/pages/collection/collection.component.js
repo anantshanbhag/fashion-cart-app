@@ -1,5 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import CollectionItem from '../../components/collection-item/collection-item.component';
 
@@ -13,10 +14,12 @@ import {
 
 /** 
  * @createdOn 11-Aug-2021 
- * @modifiedOn 20-Aug-2021 
+ * @modifiedOn 16-Sep-2021 (redux and router hooks)
  */
-const CollectionPage = ({ collection }) => {
+const CollectionPage = () => {
 
+	const { collectionId } = useParams();	//mimics props.match.params.collectionId //Came from route: domain.com/shop/:collectionId -> eg. /shop/shoes
+	const collection = useSelector(state => selectShopCollection(collectionId)(state));
 	const { title, items } = collection;
 
 	return (
@@ -31,8 +34,4 @@ const CollectionPage = ({ collection }) => {
 	);
 };
 
-const mapStateToProps = (state, ownProps) => ({
-	collection: selectShopCollection(ownProps.match.params.collectionId)(state)
-})
-
-export default connect(mapStateToProps)(CollectionPage);
+export default CollectionPage;

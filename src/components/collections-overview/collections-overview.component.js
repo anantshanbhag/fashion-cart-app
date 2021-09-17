@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import { useSelector } from 'react-redux';
 
 import CollectionPreview from "../collection-preview/collection-preview.component";
 
@@ -10,20 +9,21 @@ import { CollectionsOverviewContainer } from './collections-overview.styles';
 
 /** 
  * @createdOn 12-Aug-2021 
- * @modifiedOn 30-Aug-2021 
+ * @modifiedOn 16-Sep-2021 (redux hooks)
  */
-const CollectionsOverview = ({ collections }) => (
-  <CollectionsOverviewContainer>
-    {
-      collections.map(({ id, ...otherCollectionProps }) =>
-        <CollectionPreview key={id} {...otherCollectionProps} />
-      )
-    }
-  </CollectionsOverviewContainer>
-);
+const CollectionsOverview = () => {
 
-const mapStateToProps = createStructuredSelector({
-  collections: selectCollectionsForPreview
-})
+  const collections = useSelector(selectCollectionsForPreview);
 
-export default connect(mapStateToProps)(CollectionsOverview);
+  return (
+    <CollectionsOverviewContainer>
+      {
+        collections.map(({ id, ...otherCollectionProps }) =>
+          <CollectionPreview key={id} {...otherCollectionProps} />
+        )
+      }
+    </CollectionsOverviewContainer>
+  );
+}
+
+export default CollectionsOverview;
